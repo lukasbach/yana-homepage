@@ -5,6 +5,7 @@ import { LatestVersionSection } from '../components/downloads/LatestVersionSecti
 import { AllVersionsSection } from '../components/downloads/AllVersionsSection';
 import { Footer } from '../components/Footer';
 import { Helmet } from '../components/Helmet';
+
 import '../style.css';
 
 const Page: React.FC = () => {

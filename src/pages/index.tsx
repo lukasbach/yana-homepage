@@ -10,7 +10,6 @@ import { Helmet } from '../components/Helmet';
 
 import '../style.css';
 
-
 export default class extends React.Component<{}, {}> {
   public render() {
     return (

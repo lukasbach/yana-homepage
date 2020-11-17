@@ -6,6 +6,8 @@ import { Footer } from '../components/Footer';
 import { MarginContent } from '../components/MarginContent';
 import GatsbyLink from 'gatsby-link';
 
+import '../style.css';
+
 const NotFoundPage = () => (
   <div>
     <Helmet title="Yana - 404" />

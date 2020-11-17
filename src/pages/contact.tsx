@@ -3,11 +3,11 @@ import { BrandHeader } from '../components/BrandHeader';
 import { Navbar } from '../components/Navbar';
 import { MarginContent } from '../components/MarginContent';
 import { useEffect } from 'react';
-import '../style.css';
 import { BigParagraph } from '../components/BigParagraph';
-import { DownloadHighlight } from '../components/highlights/DownloadHighlight';
 import { Footer } from '../components/Footer';
 import { Helmet } from '../components/Helmet';
+
+import '../style.css';
 
 const Page: React.FC = () => {
   useEffect(() => {
