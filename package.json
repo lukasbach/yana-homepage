@@ -1,29 +1,44 @@
 {
-  "name": "gatsby-starter-typescript",
-  "description": "Gatsby TypeScript starter",
+  "name": "yana-homepage",
+  "description": "Yana Homepage",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Lukas Bach",
   "dependencies": {
-    "@types/node": "^8.0.7",
-    "@types/react": "15.0.21",
-    "@types/react-dom": "0.14.23",
-    "gatsby": "^1.9.119",
-    "gatsby-link": "^1.6.28",
-    "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-typescript": "^1.4.10"
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
+    "@types/node": "^14.14.7",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "@types/react-helmet": "^6.1.0",
+    "@types/youtube-player": "^5.5.3",
+    "color": "^3.1.3",
+    "cxs": "^6.2.0",
+    "gatsby": "^2.26.1",
+    "gatsby-link": "^2.5.0",
+    "gatsby-plugin-manifest": "^2.6.1",
+    "gatsby-plugin-react-helmet": "^3.4.0",
+    "gatsby-plugin-typescript": "^2.6.0",
+    "node-fetch": "^2.6.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0",
+    "react-youtube": "^7.13.0"
   },
   "keywords": [
-    "gatsby, typescript"
+    "yana, notes, notebook"
   ],
   "license": "MIT",
-  "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "start": "gatsby develop -p 3000",
     "format": "prettier --parser typescript --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.ts*\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gatsby build"
   },
   "devDependencies": {
+    "@types/color": "^3.0.1",
+    "@types/cxs": "^6.2.1",
     "prettier": "^1.8.2"
   },
   "contributors": [

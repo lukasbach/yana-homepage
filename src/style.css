@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500;1,700&display=swap');
+
+html, body, #___gatsby, #gatsby-focus-wrapper {
+    margin: 0;
+    background-color: #222;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a, a:visited {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+}
+
+a:hover {
+    color: #377cc3;
+    border-color: #377cc3;
+}
+
+a:active {
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-style: italic;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+::-moz-selection { background: #888; }
+::selection { background: #000; }

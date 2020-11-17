@@ -1,43 +1,48 @@
 import * as React from 'react'
-import Link from 'gatsby-link'
+import { BrandHeader } from '../components/BrandHeader';
+import { Navbar } from '../components/Navbar';
+import { IntroductionHighlight } from '../components/highlights/IntroductionHighlight';
+import { DownloadHighlight } from '../components/highlights/DownloadHighlight';
+import { HighlightContainer } from '../components/highlight/HighlightContainer';
+import { YoutubeEmbed } from '../components/YoutubeEmbed';
+import { Footer } from '../components/Footer';
+import { Helmet } from '../components/Helmet';
 
-// Please note that you can use https://github.com/dotansimha/graphql-code-generator
-// to generate all types from graphQL schema
-interface IndexPageProps {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-      }
-    }
-  }
-}
+import '../style.css';
 
-export default class extends React.Component<IndexPageProps, {}> {
-  constructor(props: IndexPageProps, context: any) {
-    super(props, context)
-  }
+
+export default class extends React.Component<{}, {}> {
   public render() {
     return (
       <div>
-        <h1>Hi people</h1>
-        <p>
-          Welcome to your new{' '}
-          <strong>{this.props.data.site.siteMetadata.title}</strong> site.
-        </p>
-        <p>Now go build something great.</p>
-        <Link to="/page-2/">Go to page 2</Link>
+        <Helmet />
+        <BrandHeader>
+          <Navbar />
+          <IntroductionHighlight />
+        </BrandHeader>
+        <DownloadHighlight />
+        <HighlightContainer
+          media={<YoutubeEmbed width={500} borderRadius={24} videoId="C4LzKL-i2ck" />}
+          title="Powerful notes editor"
+          text="Manage your notes in a rich text editor with tons of features, or manage code snippets in the editor that powers Visual Studio Code."
+          form={1}
+        />
+        <HighlightContainer
+          media={<YoutubeEmbed width={500} borderRadius={24} videoId="e1Cxk_Fzmn8" />}
+          title="Organize your thoughts"
+          text="Structure your notes with nesting, tags and a powerful search."
+          invert={true}
+          form={2}
+        />
+        <HighlightContainer
+          media={<YoutubeEmbed width={500} borderRadius={24} videoId="dgt9wkyx5_M" />}
+          title="A notebook that scales"
+          text="Manage ten thousands of notes with ease, so your notebook will never become the bottleneck."
+          form={3}
+        />
+        <DownloadHighlight />
+        <Footer />
       </div>
     )
   }
 }
-
-export const pageQuery = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
