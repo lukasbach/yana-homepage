@@ -6,6 +6,11 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
 
   do {
     const result = await fetch(nextUrl, {});
+
+    if (!result.ok) {
+      process.exit(1);
+    }
+
     const json = await result.json();
     nextUrl = (/\<([^\s]+)\>\;\s+rel=\"next\"/.exec(result.headers.get('Link')) || [])[1];
 
@@ -28,8 +33,6 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
       });
     }
   } while(!!nextUrl);
-
-  console.log("Fetched releases from GitHub", releases)
 
   releases = releases.sort((a, b) => b.created.localeCompare(a.created));
 

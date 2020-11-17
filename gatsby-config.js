@@ -13,7 +13,7 @@ module.exports = {
       options: {
         name: `Yana - Powerful note-taking app`,
         short_name: `Yana`,
-        start_url: `/`,
+        start_url: `/yana-homepage/`,
         background_color: `#222222`,
         theme_color: `#377cc3`,
         display: `standalone`,
