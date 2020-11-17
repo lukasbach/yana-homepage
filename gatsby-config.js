@@ -6,8 +6,8 @@ module.exports = {
   },
   pathPrefix: '/yana-homepage',
   plugins: [
+    `gatsby-plugin-cxs`,
     `gatsby-plugin-react-helmet`,
-    // Add typescript stack into webpack
     `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-manifest`,
