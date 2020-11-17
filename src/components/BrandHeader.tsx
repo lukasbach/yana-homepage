@@ -1,41 +1,40 @@
 import * as React from 'react';
 import { primaryColor } from '../colors';
 import cxs from 'cxs';
-import { YoutubeEmbed } from './YoutubeEmbed';
-
-const styles = {
-  container: cxs({
-    overflow: 'hidden'
-  }),
-  content: cxs({
-    backgroundColor: primaryColor,
-    height: '200px',
-    position: 'relative'
-  }),
-  contentTiny: cxs({
-    height: '130px !important',
-  }),
-  contentInner: cxs({
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 20,
-    margin: '2em 18em'
-  }),
-  svg: cxs({
-    transform: 'scale(1.1)',
-    width: '100%',
-    ' path': {
-      fill: primaryColor
-    },
-    zIndex: 10
-  })
-};
 
 export const BrandHeader: React.FC<{
   tiny?: boolean,
 }> = props => {
+  const styles = {
+    container: cxs({
+      overflow: 'hidden'
+    }),
+    content: cxs({
+      backgroundColor: primaryColor,
+      height: '200px',
+      position: 'relative'
+    }),
+    contentTiny: cxs({
+      height: '130px !important',
+    }),
+    contentInner: cxs({
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 20,
+      margin: '2em 18em'
+    }),
+    svg: cxs({
+      transform: 'scale(1.1)',
+      width: '100%',
+      ' path': {
+        fill: primaryColor
+      },
+      zIndex: 10
+    })
+  };
+
   return (
     <div className={styles.container}>
       <div className={[

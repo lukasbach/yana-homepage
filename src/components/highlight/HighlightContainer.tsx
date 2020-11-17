@@ -3,57 +3,6 @@ import cxs from 'cxs';
 import { HighlightForm } from './HighlightForm';
 import { primaryColor } from '../../colors';
 
-const styles = {
-  container: cxs({
-    margin: '6em 0',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignContent: 'center',
-  }),
-  inner: cxs({
-    display: 'flex',
-    width: '1200px',
-  }),
-  media: cxs({
-    width: '600px',
-    height: '450px',
-    position: 'relative',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  }),
-  mediaInner: cxs({
-    width: '600px',
-    height: '450px',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  }),
-  text: cxs({
-    width: '600px',
-    color: 'white',
-    alignSelf: 'center',
-    '> h4': {
-      fontSize: '4em'
-    },
-    '> p': {
-      fontSize: '2em',
-      lineHeight: '1.4',
-    }
-  }),
-  textLeft: cxs({
-    paddingRight: '100px',
-    textAlign: 'right'
-  }),
-  textRight: cxs({
-    paddingLeft: '200px'
-  })
-}
-
 export const HighlightContainer: React.FC<{
   media: React.ReactNode,
   title: React.ReactNode | string,
@@ -61,6 +10,56 @@ export const HighlightContainer: React.FC<{
   invert?: boolean,
   form: number,
 }> = props => {
+  const styles = {
+    container: cxs({
+      margin: '6em 0',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignContent: 'center',
+    }),
+    inner: cxs({
+      display: 'flex',
+      width: '1200px',
+    }),
+    media: cxs({
+      width: '600px',
+      height: '450px',
+      position: 'relative',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }),
+    mediaInner: cxs({
+      width: '600px',
+      height: '450px',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }),
+    text: cxs({
+      width: '600px',
+      color: 'white',
+      alignSelf: 'center',
+      '> h4': {
+        fontSize: '4em'
+      },
+      '> p': {
+        fontSize: '2em',
+        lineHeight: '1.4',
+      }
+    }),
+    textLeft: cxs({
+      paddingRight: '100px',
+      textAlign: 'right'
+    }),
+    textRight: cxs({
+      paddingLeft: '200px'
+    })
+  };
 
   return (
     <div className={styles.container}>

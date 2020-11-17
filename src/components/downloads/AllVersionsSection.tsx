@@ -11,67 +11,6 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { primaryColor } from '../../colors';
 import GatsbyLink from 'gatsby-link';
 
-const styles = {
-  container: cxs({
-    color: 'white',
-    ' h2': {
-      margin: '32px 0 10px 0',
-      '> span': {
-        fontSize: '.6em',
-        verticalAlign: 'baseline',
-        paddingLeft: '16px',
-        color: '#aaa'
-      }
-    },
-    '> div': {
-      marginBottom: '100px'
-    }
-  }),
-  assetContainer: cxs({
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: '32px',
-    marginBottom: '28px',
-    cursor: 'pointer',
-    ':hover *': {
-      color: `${primaryColor} !important`
-    }
-  }),
-  assetContainerLeftIcon: cxs({
-    fontSize: '48px',
-    marginRight: '16px'
-  }),
-  assetContainerRightIcon: cxs({
-    '> span': {
-      paddingRight: '8px',
-      color: '#aaa',
-      fontSize: '.7em',
-      // fontWeight: 300
-    }
-  }),
-  assetContainerText: cxs({
-    flexGrow: 1,
-    '> p': {
-      margin: 0
-    },
-    '> :nth-child(1)': {
-      fontStyle: 'italic',
-      fontSize: '1.1em'
-    },
-    '> :nth-child(2)': {
-      color: '#aaa'
-    },
-  }),
-  buttons: cxs({
-    display: 'flex',
-    justifyContent: 'center',
-    '> button': {
-      margin: '0 1em'
-    }
-  })
-}
-
 export const query = graphql`
   {
     allRelease {
@@ -99,6 +38,67 @@ export const query = graphql`
 
 export const AllVersionsSection: React.FC<{}> = props => {
   const data: Release[] = useStaticQuery(query).allRelease.edges.map((edge: any) => edge.node);
+
+  const styles = {
+    container: cxs({
+      color: 'white',
+      ' h2': {
+        margin: '32px 0 10px 0',
+        '> span': {
+          fontSize: '.6em',
+          verticalAlign: 'baseline',
+          paddingLeft: '16px',
+          color: '#aaa'
+        }
+      },
+      '> div': {
+        marginBottom: '100px'
+      }
+    }),
+    assetContainer: cxs({
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginLeft: '32px',
+      marginBottom: '28px',
+      cursor: 'pointer',
+      ':hover *': {
+        color: `${primaryColor} !important`
+      }
+    }),
+    assetContainerLeftIcon: cxs({
+      fontSize: '48px',
+      marginRight: '16px'
+    }),
+    assetContainerRightIcon: cxs({
+      '> span': {
+        paddingRight: '8px',
+        color: '#aaa',
+        fontSize: '.7em',
+        // fontWeight: 300
+      }
+    }),
+    assetContainerText: cxs({
+      flexGrow: 1,
+      '> p': {
+        margin: 0
+      },
+      '> :nth-child(1)': {
+        fontStyle: 'italic',
+        fontSize: '1.1em'
+      },
+      '> :nth-child(2)': {
+        color: '#aaa'
+      },
+    }),
+    buttons: cxs({
+      display: 'flex',
+      justifyContent: 'center',
+      '> button': {
+        margin: '0 1em'
+      }
+    })
+  };
 
   return (
     <MarginContent>

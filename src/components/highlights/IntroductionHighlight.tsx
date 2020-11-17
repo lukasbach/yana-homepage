@@ -2,32 +2,32 @@ import * as React from 'react';
 import cxs from 'cxs';
 import { YoutubeEmbed } from '../YoutubeEmbed';
 
-const styles = {
-  container: cxs({
-    display: 'flex',
-    marginTop: '100px',
-    alignItems: 'center'
-  }),
-  right: cxs({
-    marginLeft: '3em',
-    '> h2': {
-      color: '#222',
-      fontSize: '4em',
-      lineHeight: '1',
-      margin: 0,
-      fontStyle: 'italic',
-      fontWeight: 800
-    },
-    '> p': {
-      color: 'white',
-      fontSize: '1.4em',
-      maxWidth: '20em',
-      lineHeight: '1.7',
-    }
-  })
-};
 // Works with any size of notebook, from a few notes to ten thousands!
 export const IntroductionHighlight: React.FC<{}> = props => {
+  const styles = {
+    container: cxs({
+      display: 'flex',
+      marginTop: '100px',
+      alignItems: 'center'
+    }),
+    right: cxs({
+      marginLeft: '3em',
+      '> h2': {
+        color: '#222',
+        fontSize: '4em',
+        lineHeight: '1',
+        margin: 0,
+        fontStyle: 'italic',
+        fontWeight: 800
+      },
+      '> p': {
+        color: 'white',
+        fontSize: '1.4em',
+        maxWidth: '20em',
+        lineHeight: '1.7',
+      }
+    })
+  };
 
   return (
     <div className={styles.container}>

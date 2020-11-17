@@ -2,20 +2,7 @@ import * as React from 'react';
 import cxs from 'cxs';
 import YouTube from 'react-youtube';
 
-const styles = {
-  container: cxs({
-    position: 'relative'
-  }),
-  overlay: cxs({
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-  })
-}
-
-// TODO move to not working when invoked from "Recent items" and potentially from "more"
+// TODO YANA move to not working when invoked from "Recent items" and potentially from "more"
 /*
 
       <iframe
@@ -34,6 +21,18 @@ export const YoutubeEmbed: React.FC<{
   borderRadius: number,
   videoId: string
 }> = props => {
+  const styles = {
+    container: cxs({
+      position: 'relative'
+    }),
+    overlay: cxs({
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+    })
+  };
 
   return (
     <div className={[

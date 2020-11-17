@@ -1,6 +1,5 @@
 import * as React from 'react';
 import cxs from 'cxs';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import { primaryColor } from '../../colors';
 import { faApple, faLinux, faUbuntu, faWindows } from '@fortawesome/free-brands-svg-icons';
@@ -9,56 +8,56 @@ import { useLatestRelease } from '../../useLatestRelease';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import GatsbyLink from 'gatsby-link';
 
-const styles = {
-  container: cxs({
-    margin: '10em 0 12em 0',
-    display: 'flex',
-    justifyContent: 'center',
-  }),
-  inner: cxs({
-    width: '840px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  }),
-  left: cxs({}),
-  right: cxs({
-    flexGrow: 1,
-    width: '350px',
-    color: 'white',
-    marginLeft: '64px',
-    '> h2': {
-      fontSize: '2em'
-    },
-    '> p': {
-      marginBottom: '0'
-    }
-  }),
-  downloadButton: cxs({
-    backgroundColor: primaryColor,
-    padding: '16px 32px',
-    border: 'none',
-    borderRadius: '12px',
-    color: 'white',
-    display: 'flex',
-    alignItems: 'center',
-    cursor: 'pointer',
-    ' :nth-child(1)': {
-      fontSize: '1.6em',
-      marginRight: '10px',
-    },
-    ' :nth-child(2)': {
-      fontSize: '1.6em',
-      fontWeight: 'bolder'
-    },
-    ':hover': {
-      backgroundColor: 'white',
-      color: primaryColor,
-    }
-  })
-}
-
 export const DownloadHighlight: React.FC<{}> = props => {
+  const styles = {
+    container: cxs({
+      margin: '10em 0 12em 0',
+      display: 'flex',
+      justifyContent: 'center',
+    }),
+    inner: cxs({
+      width: '840px',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }),
+    left: cxs({}),
+    right: cxs({
+      flexGrow: 1,
+      width: '350px',
+      color: 'white',
+      marginLeft: '64px',
+      '> h2': {
+        fontSize: '2em'
+      },
+      '> p': {
+        marginBottom: '0'
+      }
+    }),
+    downloadButton: cxs({
+      backgroundColor: primaryColor,
+      padding: '16px 32px',
+      border: 'none',
+      borderRadius: '12px',
+      color: 'white',
+      display: 'flex',
+      alignItems: 'center',
+      cursor: 'pointer',
+      ' :nth-child(1)': {
+        fontSize: '1.6em',
+        marginRight: '10px',
+      },
+      ' :nth-child(2)': {
+        fontSize: '1.6em',
+        fontWeight: 'bolder'
+      },
+      ':hover': {
+        backgroundColor: 'white',
+        color: primaryColor,
+      }
+    })
+  };
+
   let icon: IconProp;
   let downloadText: string;
   let downloadUrl: string;

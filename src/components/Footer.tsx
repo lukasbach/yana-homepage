@@ -1,77 +1,74 @@
 import * as React from 'react';
-import { MarginContent } from './MarginContent';
 import cxs from 'cxs';
 import Color from 'color';
 import brandIcon from '../icons/icon-white.svg';
 import GatsbyLink from 'gatsby-link';
 
-const styles = {
-  container: cxs({
-    backgroundColor: Color('#222').darken(.1).toString(),
-    borderRadius: '16px',
-    margin: '5em 2em 1em 2em',
-    padding: '1.4em 2.4em',
-    color: 'white',
-    fontSize: '1.4em',
-    display: 'flex',
-    '@media (max-width: 1100px)': {
-      flexDirection: 'column',
-      '> div': {
-        margin: '1em 0 0 0'
-      }
-    }
-  }),
-  left: cxs({
-    flexGrow: 1,
-    '> div': {
-      display: 'flex',
-      alignItems: 'center',
-      '> span': {
-        marginLeft: '24px'
-      }
-    }
-  }),
-  anchorColumn: cxs({
-    display: 'flex',
-    flexDirection: 'column',
-    marginLeft: '64px',
-    width: '7em',
-    '> h4': {
-      margin: '0 0 16px 0',
-    },
-    '> a': {
-      textDecoration: 'none',
-      border: 'none',
-      marginBottom: '10px',
-      fontSize: '.7em',
-      fontWeight: 'lighter',
-      color: '#aaa !important',
-      ':hover': {
-        color: '#fff !important'
-      }
-    }
-  }),
-  footerLine: cxs({
-    color: '#aaa !important',
-    fontWeight: 'lighter',
-    backgroundColor: Color('#222').darken(.1).toString(),
-    padding: '.8em 2.2em',
-    display: 'flex',
-    '> :nth-child(1)': {
-      flexGrow: 1
-    },
-    ' a': {
-      fontWeight: 'lighter',
-      color: '#aaa',
-    }
-  })
-}
-
 export const Footer: React.FC<{}> = props => {
+  const styles = {
+    container: cxs({
+      backgroundColor: Color('#222').darken(.1).toString(),
+      borderRadius: '16px',
+      margin: '5em 2em 1em 2em',
+      padding: '1.4em 2.4em',
+      color: 'white',
+      fontSize: '1.4em',
+      display: 'flex',
+      '@media (max-width: 1100px)': {
+        flexDirection: 'column',
+        '> div': {
+          margin: '1em 0 0 0'
+        }
+      }
+    }),
+    left: cxs({
+      flexGrow: 1,
+      '> div': {
+        display: 'flex',
+        alignItems: 'center',
+        '> span': {
+          marginLeft: '24px'
+        }
+      }
+    }),
+    anchorColumn: cxs({
+      display: 'flex',
+      flexDirection: 'column',
+      marginLeft: '64px',
+      width: '7em',
+      '> h4': {
+        margin: '0 0 16px 0',
+      },
+      '> a': {
+        textDecoration: 'none',
+        border: 'none',
+        marginBottom: '10px',
+        fontSize: '.7em',
+        fontWeight: 'lighter',
+        color: '#aaa !important',
+        ':hover': {
+          color: '#fff !important'
+        }
+      }
+    }),
+    footerLine: cxs({
+      color: '#aaa !important',
+      fontWeight: 'lighter',
+      backgroundColor: Color('#222').darken(.1).toString(),
+      padding: '.8em 2.2em',
+      display: 'flex',
+      '> :nth-child(1)': {
+        flexGrow: 1
+      },
+      ' a': {
+        fontWeight: 'lighter',
+        color: '#aaa',
+      }
+    })
+  };
 
   return (
     <>
-
       <div className={styles.container}>
         <div className={styles.left}>
           <div>
