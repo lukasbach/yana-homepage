@@ -64,7 +64,7 @@ export const DownloadHighlight: React.FC<{}> = props => {
   let downloadUrl: string;
 
   const release = useLatestRelease();
-  const os = (navigator.platform || navigator.appVersion || (navigator as any).oscpu).toLowerCase();
+  const os = typeof window !== 'undefined' ? (navigator.platform || navigator.appVersion || (navigator as any).oscpu).toLowerCase() : '';
 
   if (os.includes('win') || os.includes('wow')) {
     icon = faWindows;
