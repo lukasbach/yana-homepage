@@ -1,6 +1,10 @@
 import * as React from 'react';
 import cxs from 'cxs';
 import YouTube from 'react-youtube';
+import { useRef, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { YouTubePlayer } from 'youtube-player/dist/types';
 
 // TODO YANA move to not working when invoked from "Recent items" and potentially from "more"
 /*
@@ -31,8 +35,26 @@ export const YoutubeEmbed: React.FC<{
       right: 0,
       bottom: 0,
       left: 0,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      opacity: 0,
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'rgba(0,0,0,.5)',
+        color: 'white',
+        opacity: 1,
+      }
+    }),
+    overlayPaused: cxs({
+      backgroundColor: 'rgba(0,0,0,.5)',
+      color: 'white',
+      opacity: 1,
     })
   };
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const player = useRef<YouTubePlayer>();
 
   return (
     <div className={[
@@ -44,10 +66,20 @@ export const YoutubeEmbed: React.FC<{
     ].join(' ')}>
       <YouTube
         videoId={props.videoId}
-        onReady={e => e.target.playVideo()}
-        onEnd={e => e.target.playVideoAt(0)}
-        onPause={e => e.target.playVideo()}
-        onStateChange={e => e.target.playVideo()}
+        onReady={e => {
+          player.current = e.target;
+          e.target.playVideo();
+        }}
+        onEnd={e => {
+          e.target.playVideoAt(0);
+          e.target.playVideo();
+        }}
+        onPause={e => {
+          setIsPlaying(false);
+        }}
+        onPlay={e => setIsPlaying(true)}
+        // onStateChange={e => e.target.playVideo()}
+        onError={e => e.target.playVideo()}
         opts={{
           width: props.width + 'px',
           height: (props.width / 16) * 9 + 'px',
@@ -63,7 +95,24 @@ export const YoutubeEmbed: React.FC<{
         containerClassName={cxs({ borderRadius: props.borderRadius + 'px' })}
         className={cxs({ borderRadius: props.borderRadius + 'px' })}
       />
-      <div className={styles.overlay} />
+      <div
+        className={[
+          styles.overlay,
+          !isPlaying && styles.overlayPaused,
+          cxs({ borderRadius: props.borderRadius + 'px' })
+        ].join(' ')}
+        onClick={() => {
+          if (player.current) {
+            if (isPlaying) {
+              player.current.pauseVideo();
+            } else {
+              player.current.playVideo();
+            }
+          }
+        }}
+      >
+        <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
+      </div>
     </div>
   );
 };
