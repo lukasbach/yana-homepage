@@ -7,12 +7,18 @@ export const BrandHeader: React.FC<{
 }> = props => {
   const styles = {
     container: cxs({
-      overflow: 'hidden'
+    //  overflow: 'hidden'
     }),
     content: cxs({
       backgroundColor: primaryColor,
       height: '200px',
-      position: 'relative'
+      position: 'relative',
+      '@media (max-width: 1700px)': {
+        height: '320px',
+      },
+      '@media (max-width: 1200px)': {
+        height: '440px',
+      }
     }),
     contentTiny: cxs({
       height: '130px !important',
@@ -23,7 +29,10 @@ export const BrandHeader: React.FC<{
       left: 0,
       right: 0,
       zIndex: 20,
-      margin: '2em 18em'
+      margin: '2em 18em',
+      '@media (max-width: 1700px)': {
+        margin: '2em 4em',
+      }
     }),
     svg: cxs({
       transform: 'scale(1.1)',
@@ -36,10 +45,17 @@ export const BrandHeader: React.FC<{
   };
 
   return (
-    <div className={styles.container}>
+    <div className={[
+      styles.container,
+      !props.tiny && cxs({
+        '@media (max-width: 1300px)': {
+          marginBottom: '480px'
+        }
+      })
+    ].join(' ')}>
       <div className={[
         styles.content,
-        props.tiny ? styles.contentTiny : ''
+        props.tiny ? styles.contentTiny : '',
       ].join(' ')}>
         <div className={styles.contentInner}>
           { props.children }

@@ -14,6 +14,9 @@ export const Navbar: React.FC<{
       flexDirection: 'row',
       alignItems: 'center',
       color: 'white',
+      '@media (max-width: 750px)': {
+        flexDirection: 'column',
+      }
     }),
     left: cxs({
       flexGrow: 1,
@@ -24,6 +27,9 @@ export const Navbar: React.FC<{
         margin: '0 0 0 1.4em',
         color: 'white',
         transform: 'translateY(-.2em)'
+      },
+      '@media (max-width: 1200px)': {
+        marginBottom: '2em'
       }
     }),
     leftClickable: cxs({

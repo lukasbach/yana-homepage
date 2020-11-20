@@ -8,7 +8,10 @@ export const IntroductionHighlight: React.FC<{}> = props => {
     container: cxs({
       display: 'flex',
       marginTop: '100px',
-      alignItems: 'center'
+      alignItems: 'center',
+      '@media (max-width: 1300px)': {
+        flexDirection: 'column',
+      }
     }),
     right: cxs({
       marginLeft: '3em',
@@ -18,13 +21,20 @@ export const IntroductionHighlight: React.FC<{}> = props => {
         lineHeight: '1',
         margin: 0,
         fontStyle: 'italic',
-        fontWeight: 800
+        fontWeight: 800,
+        '@media (max-width: 1300px)': {
+          color: '#fff',
+          marginBottom: '.4em',
+          marginTop: '.8em'
+        }
       },
       '> p': {
         color: 'white',
         fontSize: '1.4em',
-        maxWidth: '20em',
         lineHeight: '1.7',
+        '@media (min-width: 1800px)': {
+          maxWidth: '20em',
+        }
       }
     })
   };

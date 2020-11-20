@@ -21,6 +21,13 @@ export const HighlightContainer: React.FC<{
     inner: cxs({
       display: 'flex',
       width: '1200px',
+      '@media (max-width: 1300px)': {
+        width: '1000px',
+      },
+      '@media (max-width: 1100px)': {
+        width: '700px',
+        flexDirection: 'column',
+      },
     }),
     media: cxs({
       width: '600px',

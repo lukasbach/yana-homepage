@@ -69,6 +69,7 @@ export const DownloadHighlight: React.FC<{}> = props => {
     icon = faWindows;
     downloadText = 'Download for Windows';
     downloadUrl = release.assets.find(asset => asset.name.includes('.exe'))?.downloadUrl ?? '/download';
+    console.log(release.assets.find(asset => asset.name.includes('.exe'))?.downloadUrl, release.assets, release, downloadUrl, downloadText)
   } else if (os.includes('mac')) {
     icon = faApple;
     downloadText = 'Download for Mac';
@@ -91,11 +92,13 @@ export const DownloadHighlight: React.FC<{}> = props => {
     <div className={styles.container}>
       <div className={styles.inner}>
         <div className={styles.left}>
-          <GatsbyLink to={downloadUrl}>
+          <a href="#" onClick={() => {
+            window.open(downloadUrl, '_blank')
+          }}>
             <BigButton icon={icon}>
               { downloadText }
             </BigButton>
-          </GatsbyLink>
+          </a>
         </div>
         <div className={styles.right}>
           <h2>Get started within minutes</h2>
