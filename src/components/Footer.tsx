@@ -62,8 +62,10 @@ export const Footer: React.FC<{}> = props => {
       },
       ' a': {
         fontWeight: 'lighter',
-        color: '#aaa',
-      }
+      },
+      ' a:visited': {
+        fontWeight: 'lighter',
+      },
     })
   };
 

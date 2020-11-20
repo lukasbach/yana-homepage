@@ -6,7 +6,6 @@ module.exports = {
   },
   pathPrefix: '/yana-homepage',
   plugins: [
-    `gatsby-plugin-cxs`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
     {
