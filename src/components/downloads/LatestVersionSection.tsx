@@ -7,6 +7,25 @@ import { useLatestRelease } from '../../useLatestRelease';
 import { Release } from '../../types';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
+const styles = {
+  container: cxs({
+    color: 'white',
+    ' p': {
+      fontSize: '1.2em'
+    }
+  }),
+  buttons: cxs({
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    '> a': {
+      margin: '1em 1em',
+      width: '300px',
+      border: 'none'
+    },
+  })
+};
+
 const DownloadButton: React.FC<{
   release: Release,
   icon: IconProp,
@@ -28,24 +47,6 @@ const DownloadButton: React.FC<{
 
 export const LatestVersionSection: React.FC<{}> = props => {
   const release = useLatestRelease();
-  const styles = {
-    container: cxs({
-      color: 'white',
-      ' p': {
-        fontSize: '1.2em'
-      }
-    }),
-    buttons: cxs({
-      display: 'flex',
-      justifyContent: 'center',
-      flexWrap: 'wrap',
-      '> a': {
-        margin: '1em 1em',
-        width: '300px',
-        border: 'none'
-      },
-    })
-  };
 
   return (
     <MarginContent>
