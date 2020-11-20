@@ -69,6 +69,7 @@ export const YoutubeEmbed: React.FC<{
         onReady={e => {
           player.current = e.target;
           e.target.playVideo();
+          setTimeout(() => e.target.playVideo(), 1500);
         }}
         onEnd={e => {
           e.target.playVideoAt(0);
@@ -78,7 +79,6 @@ export const YoutubeEmbed: React.FC<{
           setIsPlaying(false);
         }}
         onPlay={e => setIsPlaying(true)}
-        // onStateChange={e => e.target.playVideo()}
         onError={e => e.target.playVideo()}
         opts={{
           width: props.width + 'px',
