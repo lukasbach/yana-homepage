@@ -2,6 +2,7 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
     margin: 0;
     background-color: #222;
     font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden;
 }
 
 a, a:visited {
