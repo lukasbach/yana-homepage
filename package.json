@@ -34,7 +34,7 @@
     "build": "gatsby build",
     "start": "gatsby develop -p 3000",
     "format": "prettier --parser typescript --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.ts*\"",
-    "test": "gatsby build --prefix-paths && yana.js.org >> public/CNAME"
+    "test": "gatsby build --prefix-paths && echo \"yana.js.org\" >> public/CNAME"
   },
   "devDependencies": {
     "@types/color": "^3.0.1",
