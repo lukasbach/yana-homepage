@@ -18,7 +18,15 @@ const DownloadButton: React.FC<{
   if (!asset) return null;
 
   return (
-    <a href={asset.downloadUrl}>
+    <a
+      href={asset.downloadUrl}
+      onClick={() => {
+        typeof window !== "undefined" && (window as any).gtag('event', 'download-from-latest', {
+          version: release.name,
+          name: asset.name
+        });
+      }}
+    >
       <BigButton icon={icon}>
         { props.children }
       </BigButton>

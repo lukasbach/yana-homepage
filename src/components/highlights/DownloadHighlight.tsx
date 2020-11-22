@@ -61,6 +61,7 @@ export const DownloadHighlight: React.FC<{}> = props => {
   let icon: IconProp;
   let downloadText: string;
   let downloadUrl: string;
+  let osEnum: string;
 
   const release = useLatestRelease();
   const os = typeof window !== 'undefined' ? (navigator.platform || navigator.appVersion || (navigator as any).oscpu).toLowerCase() : '';
@@ -69,23 +70,28 @@ export const DownloadHighlight: React.FC<{}> = props => {
     icon = faWindows;
     downloadText = 'Download for Windows';
     downloadUrl = release.assets.find(asset => asset.name.includes('.exe'))?.downloadUrl ?? '/download';
+    osEnum = 'win';
     console.log(release.assets.find(asset => asset.name.includes('.exe'))?.downloadUrl, release.assets, release, downloadUrl, downloadText)
   } else if (os.includes('mac')) {
     icon = faApple;
     downloadText = 'Download for Mac';
     downloadUrl = release.assets.find(asset => asset.name.includes('.dmg'))?.downloadUrl ?? '/download';
+    osEnum = 'mac';
   } else if (os.includes('linux')) {
     icon = faLinux;
     downloadText = 'Download for Linux';
     downloadUrl = '/download';
+    osEnum = 'linux';
   } else if (os.includes('ubuntu')) {
     icon = faUbuntu;
     downloadText = 'Download for Ubuntu';
     downloadUrl = release.assets.find(asset => asset.name.includes('.AppImage'))?.downloadUrl ?? '/download';
+    osEnum = 'ubuntu';
   } else {
     icon = faDownload;
     downloadText = 'Download';
     downloadUrl = '/download';
+    osEnum = 'unkown';
   }
 
   return (
@@ -93,6 +99,10 @@ export const DownloadHighlight: React.FC<{}> = props => {
       <div className={styles.inner}>
         <div className={styles.left}>
           <a href="#" onClick={() => {
+            typeof window !== "undefined" && (window as any).gtag('event', 'download-from-highlight', {
+              os: osEnum,
+              version: release.name
+            });
             window.open(downloadUrl, '_blank')
           }}>
             <BigButton icon={icon}>

@@ -121,7 +121,12 @@ export const AllVersionsSection: React.FC<{}> = props => {
                   const branding: any = asset.brand;
 
                   return (
-                    <GatsbyLink to={asset.downloadUrl}>
+                    <GatsbyLink to={asset.downloadUrl} onClick={() => {
+                      typeof window !== "undefined" && (window as any).gtag('event', 'download-from-all', {
+                        version: release.name,
+                        name: asset.name
+                      });
+                    }}>
                       <div className={styles.assetContainer}>
                         <div className={styles.assetContainerLeftIcon}>
                           <FontAwesomeIcon icon={branding.icon} />
