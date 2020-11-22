@@ -19,6 +19,19 @@ module.exports = {
         display: `standalone`,
         icon: 'src/icons/icon-black.svg'
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-33JC5268C8",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        // Delays sending pageview hits on route update (in milliseconds)
+        pageTransitionDelay: 0,
+        // Defers execution of google analytics script after page load
+        defer: true,
+      },
+    },
   ],
 }

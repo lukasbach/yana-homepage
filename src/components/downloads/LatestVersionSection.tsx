@@ -74,7 +74,7 @@ export const LatestVersionSection: React.FC<{}> = props => {
           </DownloadButton>
           <a href={`https://github.com/lukasbach/yana/releases/tag/${release.tagName}`} target="_blank">
             <BigButton icon={faGithub}>
-              View on GitHub
+              View on<br />GitHub
             </BigButton>
           </a>
         </div>
