@@ -107,7 +107,8 @@ export const Footer: React.FC<{}> = props => {
         </div>
         <div>
           Icons by <a href="https://fontawesome.com" target="_blank">fontawesome</a> (<a href="https://fontawesome.com/license" target="_blank">License</a>).&emsp;
-          <a href="https://lukasbach.com/impress" target="_blank">Impress & Privacy Policy</a>
+          <GatsbyLink to="/privacy">Privacy Policy</GatsbyLink>&nbsp;-&nbsp;
+          <a href="https://lukasbach.com/impress" target="_blank">Impress</a>
         </div>
       </div>
     </>
