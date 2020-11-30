@@ -40,6 +40,18 @@ export default class extends React.Component<{}, {}> {
           form={3}
         />
         <DownloadHighlight />
+        <a
+          href="https://www.producthunt.com/posts/yana-3?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-yana-3"
+          target="_blank"
+          style={{ border: 'none', textDecoration: 'none !important', textAlign: 'center', display: 'block' }}
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=276473&theme=dark"
+            alt="Yana - Powerful & organizable note-taking app with lots of features | Product Hunt"
+            width="250"
+            height="54"
+          />
+        </a>
         <Footer />
       </div>
     )

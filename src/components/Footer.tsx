@@ -92,6 +92,7 @@ export const Footer: React.FC<{}> = props => {
           <h4>Development</h4>
           <a href="https://github.com/lukasbach/yana" target="_blank">GitHub Repo</a>
           <a href="https://travis-ci.com/github/lukasbach/yana" target="_blank">Travis</a>
+          <a href="https://www.producthunt.com/posts/yana-3" target="_blank">Product Hunt</a>
         </div>
         <div className={styles.anchorColumn}>
           <h4>More Projects</h4>
