@@ -14,6 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+      with:
+        token: '${{ secrets.GITHUB_TOKEN }}'
+        name: lukasbachbot
+        email: lukasbachbot@noreploy.lukasbach.com
+        actor: lukasbachbot
     - name: Gatsby Publish
       uses: enriikke/gatsby-gh-pages-action@v2.1.1
       with:
